@@ -50,22 +50,23 @@ export default async function Hero() {
                 <div className="flex h-12 w-64 divide-x overflow-hidden rounded-lg border">
                     <Link 
                         href="/guitars"
-                        className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100"
+                        className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100"
                     >
                         Guitars
                     </Link>
                     <Link 
-                        href="/drums"
-                        className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100"
-                    >
-                        Drums
-                    </Link>
-                    <Link 
                         href="/electronic"
-                        className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100"
+                        className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100"
                     >
                         Electronic
                     </Link>
+                    <Link 
+                        href="/drums"
+                        className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100"
+                    >
+                        Drums
+                    </Link>
+              
                 </div>
             </div>
         </section>
