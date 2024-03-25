@@ -17,7 +17,7 @@ async function getData(slug: string) {
           price_id }`;
 
   const data = await client.fetch(query);
-  console.log("test");
+
   return data;
 }
 
@@ -27,7 +27,7 @@ export default async function ProductPage({
   params: { slug: string };
 }) {
   const data: fullProduct = await getData(params.slug);
-  console.log("data", data);
+
   return (
     <div className="bg-white min-h-full">
       <div className="mx-auto max-w-screen-xl px-4 md:px-8">
@@ -39,39 +39,58 @@ export default async function ProductPage({
               <span className="mb-0.5 inline-block text-gray-500">
                 {data.categoryName}
               </span>
-              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">{data.name}</h2>
+              <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl">
+                {data.name}
+              </h2>
             </div>
 
             <div className="mb-6 items-center gap-3 md:mb-10">
-                <Button className="rounded-full gap-x-2">
-                    <span className="text-sm">4.2</span>
-                    <Star className="h-5 w-5" />
-                </Button>
+              <Button className="rounded-full gap-x-2">
+                <span className="text-sm">4.2</span>
+                <Star className="h-5 w-5" />
+              </Button>
 
-                <span className="text-sm text-gray-500 transition duration-100">56 Ratings</span>
+              <span className="text-sm text-gray-500 transition duration-100">
+                56 Ratings
+              </span>
             </div>
 
             <div className="mb-4">
-                <div className="flex items-end gap-2">
-                    <span className="text-xl font-bold text-gray-800 md:text-2xl">${data.price}</span>
-                    <span className="mb-0.5 text-red-500 line-through">${data.price + 30}</span>
-                </div>
+              <div className="flex items-end gap-2">
+                <span className="text-xl font-bold text-gray-800 md:text-2xl">
+                  ${data.price}
+                </span>
+                <span className="mb-0.5 text-red-500 line-through">
+                  ${data.price + 30}
+                </span>
+              </div>
 
-                <span className="text-sm text-gray-500">Incl. VAT plus shipping</span>
-
+              <span className="text-sm text-gray-500">
+                Incl. VAT plus shipping
+              </span>
             </div>
 
             <div className="mb-6 flex items-center gap-2 text-gray-500">
-                <Truck className="h-5 w-6"/>
-                <span className="text-sm">2 - 4 Day Shipping</span>
+              <Truck className="h-5 w-6" />
+              <span className="text-sm">2 - 4 Day Shipping</span>
             </div>
 
             <div className="flex gap-2.5">
-                <AddToCart currency="GBP" description={data.description} image={data.images[0]} name={data.name} price={data.price} price_id={data.price_id} key={data._id}/>
-                <Button variant={"secondary"}>Checkout</Button>
+              <AddToCart
+                currency="GBP"
+                description={data.description}
+                image={data.images[0]}
+                name={data.name}
+                price={data.price}
+                price_id={data.price_id}
+                key={data._id}
+              />
+              <Button variant={"secondary"}>Checkout</Button>
             </div>
 
-            <p className="mt-12 text-base text-gray-500 tracking-white">{data.description}</p>
+            <p className="mt-12 text-base text-gray-500 tracking-white">
+              {data.description}
+            </p>
           </div>
         </div>
       </div>
