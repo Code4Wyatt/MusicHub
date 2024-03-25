@@ -13,7 +13,8 @@ async function getData(slug: string) {
           name,
           description,
           "slug": slug.current,
-          "categoryName": category -> name}`;
+          "categoryName": category -> name,
+          price_id }`;
 
   const data = await client.fetch(query);
   console.log("test");
@@ -66,7 +67,7 @@ export default async function ProductPage({
             </div>
 
             <div className="flex gap-2.5">
-                <AddToCart currency="GBP" description={data.description} image={data.images[0]} name={data.name} price={data.price} key={data._id}/>
+                <AddToCart currency="GBP" description={data.description} image={data.images[0]} name={data.name} price={data.price} price_id={data.price_id} key={data._id}/>
                 <Button variant={"secondary"}>Checkout</Button>
             </div>
 
