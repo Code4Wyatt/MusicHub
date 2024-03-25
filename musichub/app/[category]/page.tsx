@@ -4,7 +4,6 @@ import Link from "next/link";
 import { simplifiedProduct } from "../interface";
 
 async function getData(category: string) {
-    console.log('cat', category)
     const query = `*[_type == "product" && category->name == "${category}"] {
         _id, 
           "imageUrl": images[0].asset->url,
