@@ -37,7 +37,7 @@ export default function Navbar() {
                 <div className="flex divide-x border-r sm:border-l">
                     <Button className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none">
                         <ShoppingBag />
-                        <span className="text-xs font-semibold text-gray-500 sm:block hidden-sm">Cart</span>
+                        <span className="text-xs font-semibold text-gray-100 sm:block hidden-sm">Cart</span>
                     </Button>
                 </div>
             </div>
