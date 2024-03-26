@@ -15,7 +15,6 @@ export default function ImageGallery({ images }: iAppProps) {
     setBigImage(image);
   };
 
-  console.log("images", images);
   return (
     <div className="grid gap-4 lg:grid-cols-5">
       <div className="order-last flex gap-4 lg:border-none lg:flex-col">
